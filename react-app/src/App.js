@@ -6,7 +6,7 @@ import Technologes from './Technologies';
 
 const App = () => {
   return (
-    <div class="grid">
+    <div class="app-wrapper">
       <Header />
       <Navbar />
       <Profile />
