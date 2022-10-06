@@ -1,11 +1,5 @@
 import s from "./Navbar.module.css";
 
-let c1 = "item";
-let c2 = "active";
-
-let classes = c1 + " " + c2;
-let classesNew = `${s.item} ${c2}`;
-
 const Navbar = () => {
   return (
     <nav className={s.nav}>
