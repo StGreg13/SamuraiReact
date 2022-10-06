@@ -1,12 +1,15 @@
 import './App.css';
-import Header from './Header';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
 import Technologes from './Technologies';
 
 const App = () => {
   return (
-    <div className="App">
+    <div class="grid">
       <Header />
-      <Technologes />
+      <Navbar />
+      <Profile />
     </div>
   );
 }
