@@ -1,6 +1,12 @@
+.item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
 .ava {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 .ava img {
