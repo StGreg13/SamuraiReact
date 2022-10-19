@@ -5,16 +5,16 @@ import ReactDOM from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 import React from "react";
+import {Provider} from "./StoreContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     root.render(
         <BrowserRouter>
-            <App
-                state={state}
-                dispatch={store.dispatch.bind(store)}
-                store={store}/>
+            <Provider store={store}>
+                <App />
+            </Provider>
         </BrowserRouter>
     );
 }
