@@ -3,7 +3,7 @@ import React from "react";
 
 let Preloader = () => {
     return <div style={{backgroundColor: 'white'}}>
-        <img src={preloader} alt="loader"/>n
+        <img src={preloader} alt="loader"/>
     </div>
 }
 
