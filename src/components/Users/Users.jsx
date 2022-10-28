@@ -21,7 +21,6 @@ let Users = (props) => {
                     return (
                         <span onClick={() => {
                                 props.onPageChanged(p)
-                                console.log("crp", props.currentPage === p)
                             }}
                             className={(props.currentPage === p) ? s.selectedPage : ""}>
                         {p}
