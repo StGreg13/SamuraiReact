@@ -26,3 +26,18 @@
 .selectedPage {
     font-weight: bold;
 }
+.usersList {
+    display: flex;
+    max-width: 750px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 25px;
+}
+.usersList_item {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
