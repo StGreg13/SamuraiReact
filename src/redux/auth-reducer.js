@@ -30,13 +30,14 @@ export const setAuthUserData = (userId, email, login, isAuth) =>
     ({type: SET_USER_DATA, data: {userId, email, login, isAuth}  })
 
 export const getAuthUserData = () => (dispatch) => {
-    authAPI.me()
+    return authAPI.me()
         .then(res => {
             if (res.data.resultCode === 0) {
                 let {id, login, email} = res.data.data;
                 dispatch(setAuthUserData(id, email, login, true));
             }
         });
+    return "it-incubator"
 }
 export const login = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe)
