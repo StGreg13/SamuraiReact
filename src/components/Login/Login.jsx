@@ -6,7 +6,6 @@ import style from "./../common/FormsControls/FormsControls.module.css"
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log("login")
         props.login(formData.email, formData.password, formData.rememberMe)
     }
     if (props.isAuth) {
