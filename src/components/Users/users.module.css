@@ -9,23 +9,6 @@
     border-radius: 50%;
     object-fit: cover;
 }
-.pagination {
-    margin: 10px 0;
-}
-.pagination span {
-    display: inline-block;
-    width: 20px;
-    margin: 0 5px;
-    text-align: center;
-    cursor: pointer;
-}
-.pagination span:hover {
-    background: white;
-    border-radius: 50%;
-}
-.selectedPage {
-    font-weight: bold;
-}
 .usersList {
     display: flex;
     max-width: 750px;

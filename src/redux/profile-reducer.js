@@ -15,12 +15,12 @@ let initialState = {
     ],
     newPostText: 'it-kamasutra.com',
     profile: null,
-    status:"",
+    status: "",
 };
 
 const profileReducer = (state = initialState, action) => {
 
-    switch(action.type) {
+    switch (action.type) {
         case ADD_POST: {
             let newPost = {
                 id: 5,
@@ -64,29 +64,23 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
-export const getUserProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(userId)
-        .then(res => {
-            dispatch(setUserProfile(res.data))
-        })
+export const getUserProfile = (userId) => async (dispatch) => {
+    let res = await usersAPI.getProfile(userId)
+    dispatch(setUserProfile(res.data))
 }
 
-export const getStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(res => {
-            dispatch(setStatus(res.data))
-        })
+export const getStatus = (userId) => async (dispatch) => {
+    let res = await profileAPI.getStatus(userId)
+    dispatch(setStatus(res.data))
 }
 
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(res => {
-            if (res.data.resultCode === 0) {
-                dispatch(setStatus(status))
-            }
-        })
+export const updateStatus = (status) => async (dispatch) => {
+    let res = await profileAPI.updateStatus(status)
+    if (res.data.resultCode === 0) {
+        dispatch(setStatus(status))
+    }
 }
 export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text })
+    ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 export default profileReducer;
