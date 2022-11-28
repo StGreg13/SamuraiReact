@@ -32,9 +32,13 @@ export const setAuthUserData = (userId, email, login, isAuth) =>
 export const getAuthUserData = () => async (dispatch) => {
     let res = await authAPI.me()
 
+    console.log("getAuthUserData res", res)
+
     if (res.data.resultCode === 0) {
         let {id, login, email} = res.data.data;
         dispatch(setAuthUserData(id, email, login, true));
+    } else {
+        new Error('Not allowed by CORS')
     }
 
 }
