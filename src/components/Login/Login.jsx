@@ -1,15 +1,16 @@
 import {reduxForm} from "redux-form";
+import {createField, Input} from "../common/FormsControls/FormsControls";
+import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import style from "./../common/FormsControls/FormsControls.module.css"
-import {createField, Input} from "../common/FormsControls/FormsControls";
 
 const LoginForm = ({handleSubmit, error}) => {
     return (
         <form onSubmit={handleSubmit}>
-            {createField("Email", "email", Input)}
-            {createField("Password", "password", Input, {type: "password"})}
+            {createField("Email", "email", [required], Input)}
+            {createField("Password", "password", [required], Input, {type: "password"})}
             {createField(null, "rememberMe", [], Input, {type: "checkbox"}, "remember me")}
 
             {error && <div className={style.formSummaryError}>
