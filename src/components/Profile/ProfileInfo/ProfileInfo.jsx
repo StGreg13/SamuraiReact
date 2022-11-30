@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
-import Preloader from "../../common/preloader/preloader";
+
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import userPhoto from "../../../assets/img/user.png"
+import Preloader from "../../common/Preloader/preloader";
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
 
