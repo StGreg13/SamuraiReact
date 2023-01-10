@@ -2,9 +2,44 @@
     padding: 10px;
 }
 .mainPhoto {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 300px;
+    max-height: 300px;
 }
 .contact {
     padding-left: 10px;
+}
+.avatarBlock {
+    display: flex;
+    flex-direction: column;
+}
+.avatarBlock input {
+    display: none;
+}
+.avatarBlock label {
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.avatarBlock label:hover {
+    color: #a91e23;
+}
+.contactInformation {
+    margin-top: 20px;
+}
+.contactInformation button {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    color: #3F3D35;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s all;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.contactInformation button:hover {
+    color: #a91e23;
+    background: #f4f0e2;
 }

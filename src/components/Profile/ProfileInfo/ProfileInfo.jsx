@@ -29,24 +29,24 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     }
 
     return (
-        <div>
+        <div className={s.personalInformation}>
             <div className={s.descriptionBlock}>
-                <img src={profile.photos.large || userPhoto} className={s.mainPhoto} alt="avatar"/>
-                {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
-
-                { editMode
-                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
-                    : <ProfileData goToEditMode={() => {setEditMode(true)} } profile={profile} isOwner={isOwner}/> }
-
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+                <div className={s.avatarBlock}>
+                    <img src={profile.photos.large || userPhoto} className={s.mainPhoto} alt="avatar"/>
+                    {isOwner && (<label htmlFor="file-upload" > Загрузить фото
+                    <input id="file-upload" type={"file"} onChange={onMainPhotoSelected}/></label>)}
+                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+                    { editMode
+                        ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
+                        : <ProfileData goToEditMode={() => {setEditMode(true)} } profile={profile} isOwner={isOwner}/> }
+                </div>
             </div>
         </div>
     )
 }
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
-    return <div>
-        {isOwner && <div><button onClick={goToEditMode}>edit</button></div>}
+    return <div className={s.contactInformation}>
         <div>
             <b>Full name</b>: {profile.fullName}
         </div>
@@ -67,6 +67,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
             return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
         })}
         </div>
+        {isOwner && <div><button onClick={goToEditMode}>Изменить</button></div>}
     </div>
 }
 

@@ -1,7 +1,23 @@
 .postsBlock {
+    width: 50%;
     padding: 10px;
+    padding-right: 30px;
 }
 
 .posts {
     margin-top: 10px;
+}
+.postsBlock button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top:5px;
+    font-size: 12px;
+    transition: 0.3s all;
+    background: #f4f0e2;
+}
+.postsBlock button:hover {
+    background-color: #abb732;
+    color: #f4f0e2;
 }

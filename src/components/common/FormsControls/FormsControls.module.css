@@ -1,3 +1,10 @@
+.formControl textarea {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #213b54;
+    background-color: rgb(255, 252, 248);
+}
 .formControl.error input,
 .formControl.error textarea
 {

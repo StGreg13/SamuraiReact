@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     row-gap: 25px;
+    padding: 40px 10px;
 }
 .usersList_item {
     width: 150px;
@@ -23,4 +24,23 @@
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
+}
+.usersList_item button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top:5px;
+    font-size: 12px;
+    transition: 0.3s all;
+    background: #f4f0e2;
+}
+.usersList_item button:hover {
+    color: #f4f0e2;
+}
+.usersList_item button.follow:hover {
+    background-color: #abb732;
+}
+.usersList_item button.unfollow:hover {
+    background-color: #a91e23;
 }
